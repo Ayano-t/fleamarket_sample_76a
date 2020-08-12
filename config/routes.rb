@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'items#index'
-  resourse :items, only: :index
+  resourses :items, only: :index
 
 end
