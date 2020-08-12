@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   }
 
   enum status:{
-    #ここの内容を聞く
+    #ステータスとは
      0, #
      1, #
      2, #
@@ -25,12 +25,16 @@ class Item < ApplicationRecord
 
   enum shipping_costs:{
     #送料
+    included: 0, #送料込み
+    excluded: 1　 #送料別
   }
 
   enum shipping_form:{
+    #出荷形態
   }
 
   enum shipping_date:{
+    #出荷日
   }
 
 end
