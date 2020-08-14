@@ -1,5 +1,6 @@
 %h1 Items#index
 %p Find me in app/views/items/index.html.erb
+
 .contents.row
   - @items.each do |item|
     .content_post{:style => "background-image: url(#{item.image});"}
