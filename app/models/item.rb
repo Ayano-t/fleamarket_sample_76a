@@ -1,10 +1,15 @@
 class Item < ApplicationRecord
+
+  belongs_to :user, foreign_key: :seller_id
+  belongs_to :category, foreign_key: :category_id
+
   has_many :images, dependent: :destroy
   validates :images, presence: true
 
   belongs_to :large_category,class_name:"Category",optional: true,foreign_key: "large_category_id"
   belongs_to :middle_category,class_name:"Category",optional: true,foreign_key: "middle_category_id"
   belongs_to :small_category,class_name:"Category",optional: true,foreign_key: "small_category_id"
+
 
   enum condition:{
     new: 0, #新品未使用
