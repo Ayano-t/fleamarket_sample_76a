@@ -11,35 +11,14 @@ class Item < ApplicationRecord
   belongs_to :small_category,class_name:"Category",optional: true,foreign_key: "small_category_id"
 
 
-  enum condition:{
-    new: 0, #新品未使用
-    very_good: 1, #新品に近い状態
-    good: 2, #使用感はあるが良い状態
-    average: 3, #やや使用感がある
-    poor: 4 #特筆すべき傷などあり
-  }
+  enum condition: { new: 0, very_good: 1, good: 2, average: 3, poor: 4 }
 
-  enum status:{
-    #ステータスとは
-     0, #
-     1, #
-     2, #
-     3, #
-     4 #
-  }
+  enum status: ["未発送", "発送済み"]
 
-  enum shipping_costs:{
-    #送料
-    included: 0, #送料込み
-    excluded: 1　 #送料別
-  }
+  enum shipping_costs: ["送料込", "送料別"]
 
-  enum shipping_form:{
-    #出荷形態
-  }
+  enum shipping_form: ["ネコポス", "コンパクト宅急便", "宅急便"]
 
-  enum shipping_date:{
-    #出荷日
-  }
+  enum shipping_date: ["即日", "１〜２日後", "３〜４日後", "１週間後"]
 
 end
