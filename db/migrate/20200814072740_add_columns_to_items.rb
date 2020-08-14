@@ -9,7 +9,14 @@ class AddColumnsToItems < ActiveRecord::Migration[5.2]
     add_column :items, :shipping_form, :integer, null: false
     add_column :items, :shipping_date, :integer, null: false
     add_column :items, :price, :integer, null: false
+
+    add_reference :items, :user, foreign_key: true
+    add_reference :items, :category, foreign_key: true
+
     
+    # add_foreign_key :items, :users, column: :seller_id
+    # add_foreign_key :items, :categories, column: :category_id
+
   end
 
 end
