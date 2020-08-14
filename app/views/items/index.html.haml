@@ -1,6 +1,20 @@
 
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+-# %h1 Items#index
+-# %p Find me in app/views/items/index.html.erb
 
-%render partial: 'product-list'
+-# %render partial: 'product-list'
+!!!
+%html
+  %head
+  %body
 
+.contents-row
+  .pickup-menu
+    ピックアップメニュー
+  .new-post-items{style: "color:blue"}
+    新規投稿商品
+    .new-post-items__images
+      -@items.each do |item|
+      %item.image
+      %item.name
+      %item.price
