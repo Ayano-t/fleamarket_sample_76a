@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_130716) do
+ActiveRecord::Schema.define(version: 2020_08_14_145238) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_08_14_130716) do
     t.integer "shipping_form", null: false
     t.integer "shipping_date", null: false
     t.integer "price", null: false
+    t.string "image"
   end
 
 end

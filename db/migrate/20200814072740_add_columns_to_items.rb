@@ -16,8 +16,6 @@ class AddColumnsToItems < ActiveRecord::Migration[5.2]
 
     # add_foreign_key :items, :users, column: :seller_id
     # add_foreign_key :items, :categories, column: :category_id
-    
-    add_column :items, :image, :string, null: false
 
   end
 
