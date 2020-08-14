@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_categories, only: [:show]
-  
-  
   def index
     @items = Item.all
+  end
+
+  def new
   end
 
   def show
@@ -13,17 +13,12 @@ class ItemsController < ApplicationController
     @small_category = Smallcategory.find(@product.small_category_id).name
   end
 
+  def edit
+  end
+
   def destroy
     @item.destroy
     redirect_to root_path
-  end
-
-  private
-
-  def set_categories
-    @large_category = Largecategory.all
-    @middle_category = Middlecategory.all
-    @small_category = Smallcategory.all
   end
 
 
