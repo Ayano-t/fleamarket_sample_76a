@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   belongs_to :small_category,class_name:"Category",optional: true,foreign_key: "small_category_id"
 
 
-  enum condition: { new: 0, very_good: 1, good: 2, average: 3, poor: 4 }
+  enum condition: ["新品・未使用", "数回使用したが美品", "使用感はあるが良い状態", "使用感や傷あり"]
 
   enum status: ["未発送", "発送済み"]
 
