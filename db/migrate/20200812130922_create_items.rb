@@ -5,13 +5,11 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :brand, null: false
       t.text :description, null: false
 
-      #別途モデルでenumの内容を書いていく
       t.integer :condition, null: false 
       t.integer :status, null: false
       t.integer :shipping_costs, null: false
       t.integer :shipping_from, null: false
       t.integer :shipping_date, null: false
-      #ここまで
       
       t.integer :price, null: false
 
