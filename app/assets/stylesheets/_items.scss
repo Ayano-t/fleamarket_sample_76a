@@ -15,22 +15,24 @@
     font-weight: bold;
     text-align: center;
 
-    &__headerlist{
+    .newitems__headerlist{
       color: cyan;
       text-align: center;
     }
 
-    &__mainlists{
+    .newitems__body{
       display: flex;
-      height: 30px;
-      width: 20%;
-      margin: auto;
-      .itemlist{
+      justify-content: space-around;
+      width: 780px;
+      margin: 26px auto;
+      .newitemsbody__list{
         &__image{
         }
-        &__name{
-        }
-        &__price{
+        &__info{
+          .name{
+          }
+          .price{
+          }
         }
       }
     }

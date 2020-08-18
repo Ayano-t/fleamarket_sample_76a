@@ -10,12 +10,13 @@
   .pickupitems-box__body
     .newitems__headerlist
       新規投稿商品
-    .newitems__mainlists
-    - @items.each do |item|
-      .itemlist
-        .itemlist__image
-        = item.image
-        .itemlist__name
-        = item.name
-        .itemlist__price
-        = item.price
+    .newitems__body
+      .newitemsbody__list
+      - @items.each do |item|
+        .newitemsbody__list__image
+          = item.image
+        .newitemsbody__info
+          .name
+            = item.name
+          .price
+            = item.price
