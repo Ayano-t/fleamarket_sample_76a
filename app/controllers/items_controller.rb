@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all.limit(5)
-    # @images = Images.all
   end
 
   def new
