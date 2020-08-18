@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.select(:image, :name, :price)
-    # @images = Image.all
   end
 
   def show
