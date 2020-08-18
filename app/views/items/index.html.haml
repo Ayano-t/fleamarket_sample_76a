@@ -3,7 +3,6 @@
 -#   %head
 -#   %body
 
-
 .pickupitems-box
   .pickupitems-box__header
     ピックアップメニュー
@@ -12,10 +11,11 @@
     .newitems__headerlist
       新規投稿商品
     .newitems__mainlists
+    - @items.each do |item|
       .itemlist
         .itemlist__image
-          = @item.image 
+        = item.image
         .itemlist__name
-          = @item.name
+        = item.name
         .itemlist__price
-          = @item.price
+        = item.price
