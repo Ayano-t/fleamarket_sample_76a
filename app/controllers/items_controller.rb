@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.select(:image, :name, :price)
+    @items = Item.all.limit(5)
+    @items = Item.order("created_at DESC")
+    # @items = Item.select(:image, :name, :price)
   end
 
   def show
-    @items = Item.all
+    @items = Item.all.limit(5)
   end
 
 
