@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.pickupitems-box{
+.pickupitem-box{
   height: 100%;
   width: 100vw;
   padding: 80,0,0;
@@ -15,17 +15,18 @@
     font-weight: bold;
     text-align: center;
 
-    .newitems__headerlist{
+    .newitems__header{
       color: cyan;
       text-align: center;
     }
 
-    .newitems__body{
+    .newitems__lists{
       display: flex;
       justify-content: space-around;
       width: 780px;
       margin: 26px auto;
       .newitemsbody__list{
+        background-color: darkkhaki;
         &__image{
         }
         &__info{
@@ -38,3 +39,5 @@
     }
   }
 }
+
+// .newitemsbody__listを横並びに

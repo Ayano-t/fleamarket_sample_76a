@@ -3,18 +3,19 @@
 -#   %head
 -#   %body
 
-.pickupitems-box
-  .pickupitems-box__header
+.pickupitem-box
+  .pickupitem-box__header
     ピックアップメニュー
       
-  .pickupitems-box__body
-    .newitems__headerlist
+  .pickupitem-box__body
+    .newitems__header
       新規投稿商品
-    .newitems__body
+    .newitems__lists
+    - @items.each do |item|
       .newitemsbody__list
-      - @items.each do |item|
+        -# = link to 詳細ページへのパス
         .newitemsbody__list__image
-          = item.image
+          = image_tag item.image, :size =>'220x245'
         .newitemsbody__info
           .name
             = item.name
