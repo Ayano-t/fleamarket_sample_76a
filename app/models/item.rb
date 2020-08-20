@@ -7,9 +7,9 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   validates :images, presence: true
 
-  belongs_to :large_category,class_name:"Category",optional: true,foreign_key: "large_category_id"
-  belongs_to :middle_category,class_name:"Category",optional: true,foreign_key: "middle_category_id"
-  belongs_to :small_category,class_name:"Category",optional: true,foreign_key: "small_category_id"
+  # belongs_to :large_category,class_name:"Category",optional: true,foreign_key: "large_category_id"
+  # belongs_to :middle_category,class_name:"Category",optional: true,foreign_key: "middle_category_id"
+  # belongs_to :small_category,class_name:"Category",optional: true,foreign_key: "small_category_id"
 
   def show_image
     @image = Image.find(params[:id])
