@@ -18,4 +18,10 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  # def purchase
+  #   @item_buyer = item.find(params[:id])
+  #   # @item_buyer.
+  # end
+
 end

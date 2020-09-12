@@ -16,9 +16,11 @@
         -# = link to 詳細ページへのパス
         .newitemsbody__list__image
           = image_tag item.image, :size =>'220x245'
+            -if item.buyer_id.present? 
+            .item-image__sold
+              .item-image__sold__mark SOLD
         .newitemsbody__info
           .name
             = item.name
           .price
             #{item.price}円
-            
