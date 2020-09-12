@@ -1,0 +1,25 @@
+.body
+  %header.header
+    = render "items/header"
+
+  .sessions__container
+    %h2.sessions__container__top ログイン
+    .sessions__container__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field.sessions__container__form__box
+          = f.label :email,"メールアドレス",class:"sessions__container__form__box-title"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"sessions__container__form__box-inputbox",placeholder:"PC・携帯どちらでも可"
+
+        .field.sessions__container__form__box
+          = f.label :password,"パスワード",class:"sessions__container__form__box-title"
+          %br/
+          = f.password_field :password, autocomplete: "new-password",class:"sessions__container__form__box-inputbox",placeholder:"パスワードを入力してください"
+
+        .actions.sessions__container__form__box
+          = f.submit "ログイン",class:"sessions__container__form__box__submit"
+
+  %footer.footer 
+    = render "items/footer" 
+
+

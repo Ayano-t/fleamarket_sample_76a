@@ -1,0 +1,101 @@
+.body
+  .header
+    .header__inner
+      = image_tag 'logo.png', alt: '', height: '80', width: '', class: 'header__inner-logo'
+        
+
+
+  .address
+    %h2.address__top 個人情報入力
+    .address__form
+      = form_tag do
+        .address__form__box
+          %label.address__form__box__title
+            郵便番号
+            %span.address__form__box__title__req
+              必須
+          %br/
+          = text_field_tag "postal-code", "", class: "address__form__box__input", placeholder: "例）123-456" , type: "text", id: "postal-code"
+        .address__form__box
+          %label.address__form__box__title
+            都道府県
+            %span.address__form__box__title__req
+              必須
+          %br/
+          %select.address__form__box__input{name: "prefecturs", type: "text"}
+            %option{ value: "0"} --
+            %option{ value: "1"} 北海道
+            %option{ value: "2"} 青森県
+            %option{ value: "3"} 岩手県
+            %option{ value: "4"} 宮城県
+            %option{ value: "5"} 秋田県
+            %option{ value: "6"} 山形県
+            %option{ value: "7"} 福島県
+            %option{ value: "8"} 茨城県
+            %option{ value: "9"} 栃木県
+            %option{ value: "10"} 群馬県
+            %option{ value: "11"} 埼玉県
+            %option{ value: "12"} 千葉県
+            %option{ value: "13"} 東京都
+            %option{ value: "14"} 神奈川県
+            %option{ value: "15"} 新潟県
+            %option{ value: "16"} 富山県
+            %option{ value: "17"} 石川県
+            %option{ value: "18"} 福井県
+            %option{ value: "19"} 山梨県
+            %option{ value: "20"} 長野県
+            %option{ value: "21"} 岐阜県
+            %option{ value: "22"} 静岡県
+            %option{ value: "23"} 愛知県
+            %option{ value: "24"} 三重県
+            %option{ value: "25"} 滋賀県
+            %option{ value: "26"} 京都府
+            %option{ value: "27"} 大阪府
+            %option{ value: "28"} 兵庫県
+            %option{ value: "29"} 奈良県
+            %option{ value: "30"} 和歌山県
+            %option{ value: "31"} 鳥取県
+            %option{ value: "32"} 島根県
+            %option{ value: "33"} 岡山県
+            %option{ value: "34"} 広島県
+            %option{ value: "35"} 山口県
+            %option{ value: "36"} 徳島県
+            %option{ value: "37"} 香川県
+            %option{ value: "38"} 愛媛県
+            %option{ value: "39"} 高知県
+            %option{ value: "40"} 福岡県
+            %option{ value: "41"} 佐賀県
+            %option{ value: "42"} 長崎県
+            %option{ value: "43"} 熊本県
+            %option{ value: "44"} 大分県
+            %option{ value: "45"} 宮崎県
+            %option{ value: "46"} 鹿児島県
+            %option{ value: "47"} 沖縄県
+        .address__form__box
+          %label.address__form__box__title
+            市区町村
+            %span.address__form__box__title__req
+              必須
+          %br/
+          = text_field_tag "municipalities", "", class: "address__form__box__input", placeholder: "例）渋谷区" , type: "text", id: "municipalities"
+        .address__form__box
+          %label.address__form__box__title
+            番地
+            %span.address__form__box__title__req
+              必須
+          %br/
+          = text_field_tag "block_number", "", class: "address__form__box__input", placeholder: "例）xxx-ooo" , type: "text", id: "block_number"
+        .address__form__box
+          %label.address__form__box__title
+            建物名
+          %br/
+          = text_field_tag "building_name", "", class: "address__form__box__input", type: "text", id: "building_name"
+        .address__form__box
+          %label.address__form__box__title
+            電話番号
+            %span.address__form__box__title__req
+              必須
+          %br/
+          = text_field_tag "phone_number", "", class: "address__form__box__input", placeholder: "例）012-345-6789" , type: "text", id: "phone_number"
+        .address__form__submit
+          = submit_tag "登録する", id: "token_submit", class: "address__form__submit__btn"

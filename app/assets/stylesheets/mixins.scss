@@ -1,0 +1,42 @@
+@mixin font-title { // 項目タイトルのフォント
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@mixin font-require { // "必須"文字のフォント
+  background-color: #35C0C3;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+@mixin container { // 入れ物のスタイル
+  width: 700px;
+  padding: 20px 0 50px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+}
+
+@mixin input-text_field { // 一行の入力フォームのスタイル
+  height: 50px;
+  width: 100%;
+  padding: 10px 16px 8px;
+  margin: 8px 8px 0 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@mixin submit-btn { // サブミットボタンのスタイル
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #35C0C3;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

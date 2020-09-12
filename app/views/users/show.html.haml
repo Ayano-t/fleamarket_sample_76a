@@ -1,0 +1,46 @@
+%header.header
+  = render "items/header"
+.mypage.clearfix
+  = render partial: 'user-side'
+  .right-contents
+    .user
+      .user__icon
+        = image_tag 'icon/member_photo_noimage_thumb.png', alt: 'アイコン', height: '80', width: '80', class: ''
+      .user__info
+        .user__info__name
+          ニックネーム
+        .user__info__items
+          出品数:3
+    .todo
+      .todo__title
+        Todoリスト
+      %ul.todo__lists
+        %li.todo__lists__list
+          〇〇日までに、発送
+          %i.fas.fa-angle-right
+        %li.todo__lists__list
+          〇〇日までに、入金
+          %i.fas.fa-angle-right
+    .transactions
+      .transactions__title
+        取引中
+      %ul.transactions__lists
+        %li.transactions__lists__list
+          レディース、Tシャツ（S）
+          %i.fas.fa-angle-right
+        %li.transactions__lists__list
+          レディース、バッグ
+          %i.fas.fa-angle-right
+    .purchased
+      .purchased__title
+        購入した商品
+      %ul.purchased__lists
+        %li.purchased__lists__list
+          レディース、Tシャツ（S）
+          %i.fas.fa-angle-right
+        %li.purchased__lists__list
+          レディース、バッグ
+          %i.fas.fa-angle-right
+
+%footer.footer
+  = render "items/footer"
