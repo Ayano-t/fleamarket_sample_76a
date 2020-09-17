@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 2020_08_14_145238) do
     t.integer "shipping_date", null: false
     t.integer "price", null: false
     t.string "image"
+    t.bigint "user_id", null: false
+    t.bigint "buyer_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
 end
