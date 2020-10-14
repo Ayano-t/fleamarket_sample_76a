@@ -1,0 +1,21 @@
+.header
+  = render 'header'
+
+.search__main
+  .search__main__content
+    %h3.search__main__content__ttl
+      = "#{@keyword}の検索結果"
+    %ul.search__main__content__ul
+      - @items.each do |item|
+        %li
+          = link_to item_path(item), class: 'search__main__content__item'  do
+            = image_tag "#{item.images[0].src}", class: 'search__main__content__item__image'
+            %p.search__main__content__item__name
+              = item.name
+            %p.search__main__content__item__price
+              = "¥#{item.price}"
+
+.footer
+  = render 'footer'
+
+= render 'purchase_btn'

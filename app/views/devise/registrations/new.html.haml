@@ -1,0 +1,73 @@
+.body
+  %header.header
+    = render 'items/header' 
+    
+  .sessions__container
+    %h2.sessions__container__top 新規会員登録
+    .sessions__container__form
+      = form_for(@user, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: @user
+
+        .field.sessions__container__form__box
+          = f.label :nickname,"ニックネーム",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.text_field :nickname, autofocus: true, prefix:'',class:"container__form__box-inputbox",placeholder:"例)フリマ太郎"
+
+        .field.sessions__container__form__box
+          = f.label :email,"メールアドレス",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.email_field :email, autofocus: true, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"PC・携帯どちらでも可"
+
+        .field.sessions__container__form__box
+          = f.label :password,"パスワード",class:"sessions__container__form__box-title"
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} 文字以上)
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.password_field :password, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          %p ※ 英字と数字の両方を含めて設定してください
+
+        .field.sessions__container__form__box
+          = f.label :password_confirmation,"パスワード(確認用)",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.password_field :password_confirmation, prefix:'',class:"sessions__container__form__box-inputbox",placeholder:"○文字以上の英数字"
+          %p ※ 英字と数字の両方を含めて設定してください
+
+          %input.pass-checkbox{type: "checkbox"}
+          %label.pass-checkbox パスワードを表示する
+      
+        .sessions__container__form__box
+          %h3 本人確認
+          %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+        .field.sessions__container__form__box.clearfix
+          = f.label :first_name,"お名前（全角）",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.text_field :first_name, prefix:'', class:"container__form__box-inputbox-firstname",placeholder:"例)佐藤"
+          = f.text_field :last_name, prefix:'', class:"container__form__box-inputbox-lastname",placeholder:"例)太郎"
+
+        .field.sessions__container__form__box.clearfix
+          = f.label :last_name_kana,"お名前（カナ）",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          = f.text_field :first_name_kana, prefix:'',class:"container__form__box-inputbox-firstname",placeholder:"例)サトウ"
+          = f.text_field :last_name_kana, prefix:'',class:"container__form__box-inputbox-lastname",placeholder:"例)タロウ"
+
+        .field.sessions__container__form__box
+          = f.label :birthday,"生年月日",class:"sessions__container__form__box-title"
+          %span.sessions__container__form__box-req 必須
+          %br/
+          != sprintf(f.date_select(:birthday, prefix:'user', with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+
+        .actions.sessions__container__form__box
+          = f.submit "次へ",class:"sessions__container__form__box__submit", url: "addresses_path"
+
+      = render "devise/shared/links"
+
+  %footer.footer
+    = render 'items/footer'

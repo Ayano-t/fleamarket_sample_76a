@@ -1,0 +1,55 @@
+%header.header
+  = render 'items/header'
+%body.purchase_confirmation
+  .purchase_confirmation__container
+    .purchase_confirmation__container__inner
+      .purchase_confirmation__container__inner__logo 購入内容の確認
+      .item_information
+        .item_information__image 
+          = image_tag @item.images[0].src.url, height: '100px', width: '100px'
+        .item_information__logo 
+          .item_information__logo_name 
+            = @item.name
+          .price 
+            .price_tax 送料込み(税込み)
+            .price_how_mach 
+              %span ¥
+              = @item.price
+      .payment_amount 
+        .payment_amount__logo 支払い金額
+        .payment_amount__price 
+          %span ¥
+          = @item.price
+      .how_to_pay
+        .how_to_pay__logo 支払い方法
+        .how_to_pay__type 
+          .credit_card クレジットカード
+          .credit_card__number ********2073
+          .credit_card__limit 
+            %span 有効期限
+            04/21
+          .credit_card__type
+          = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/visa-91c71914c6ae23d33f896e60bb1e3859.svg',  height: '50px', width: '50px'
+      .shipping_address 
+        .shipping_address__logo 配送先
+        .shipping_address__detail
+          %span 〒
+          = @address.postal_code
+          .shipping_address__detail_under
+            = @address.prefecturs
+            = @address.municipalities
+            = @address.block_number
+            - if @address.building_name == nil
+              .user_name
+              = @user.first_name
+              = @user.last_name
+            - else 
+              = @address.building_name
+              .user_name
+              = @user.first_name
+              = @user.last_name
+      = form_with local: true, url: "#"  do |f|
+        .purchase_confirmation__btn   
+          = f.submit "購入する", class: "purchase_confirmation__btn_submit"   
+      
+      

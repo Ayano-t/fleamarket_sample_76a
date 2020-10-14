@@ -23,4 +23,133 @@
           .name
             = item.name
           .price
-            #{item.price}円
+            #{item.price}
+%header.header
+  = render "header"
+
+.main
+  .main__mv
+    .main__mv__content
+      %h2.main__mv__content-ttl <br>人生を変えるフリマアプリ
+      %p.main__mv__content-txt FURIMAはだれでもかんたんに出品・購入できる<br>フリマアプリです
+      .main__mv__content-btn
+        = link_to '#', class: "a-btn" do
+          = image_tag 'material/icon/AppStore.svg'
+        = link_to '#', class: "g-btn" do
+          = image_tag 'material/icon/GooglePlay.png'
+  .main__feature
+    %h2.main__feature__ttl FURIMAが選ばれる3つの理由
+    %ul.lists
+      %li.list
+        .list-img
+          %span.number 1
+          = image_tag 'material/pict/pict-reason-01.jpg', class: 'list-pict'
+        %h3.list-txt <span>3分</span>ですぐに出品
+        %p.list-description スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .list-img
+          %span.number 2
+          = image_tag 'material/pict/pict-reason-02.jpg', class: 'list-pict'
+        %h3.list-txt <span>シンプル</span>で使いやすい
+        %p.list-description めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .list-img
+          %span.number 3
+          = image_tag 'material/pict/pict-reason-03.jpg', class: 'list-pict'
+        %h3.list-txt 手数料<span>業界最安</span>
+        %p.list-description 最大3%でお得に出品&購入！
+  .main__middle
+    .main__middle__inner
+      %h2.main__middle__inner__ttl 会員数日本一
+      %p.main__middle__inner__txt FURIMAは、フリマアプリで最も人気。<br>出品・購入回数も業界最多です！<br>ほしかったあの商品にも出会えるかもしれません。
+      .main__middle__inner__btn 
+        = link_to '#', class: "a-btn" do
+          = image_tag 'material/icon/AppStore.svg'
+        = link_to '#', class: "g-btn" do
+          = image_tag 'material/icon/GooglePlay.png'
+  .main__feature2
+    %h2.main__feature2__head FURIMAの特徴
+    .main__feature2__items
+      %section.main__feature2__items__item
+        %figure.main__feature2__items__item__img
+          = image_tag 'material/icon/icon-01.png'
+        %h3.main__feature2__items__item__ttl 簡単に売り買いできる
+        %p.main__feature2__items__item__detail スマホひとつで、いつでもどこでも簡単に出品・購入が可能!
+      %section.main__feature2__items__item
+        %figure.main__feature2__items__item__img
+          = image_tag 'material/icon/icon-03.png'
+        %h3.main__feature2__items__item__ttl 売上金は即日振込みに対応
+        %p.main__feature2__items__item__detail 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %section.main__feature2__items__item
+        %figure.main__feature2__items__item__img
+          = image_tag 'material/icon/icon-04.png'
+        %h3.main__feature2__items__item__ttl 様々な支払いに対応
+        %p.main__feature2__items__item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  .main__pickup-container
+    %h2.main__pickup-container__ttl ピックアップカテゴリー
+    .main__pickup-container__box
+      %h3.main__pickup-container__box__txt 新規投稿商品
+      .main__pickup-container__box__lists
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
+          .main__pickup-container__box__lists__list__img
+            = image_tag 'material/item1.png'
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name 白米
+            .main__pickup-container__box__lists__list__body__details 
+              %ul
+                %li 10000円
+                = icon('fas', 'star')
+                %li 1
+              %p (税込み)
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
+          .main__pickup-container__box__lists__list__img
+            = image_tag 'material/item2.png', height: '150px', width: '220px'
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name ピザ
+            .main__pickup-container__box__lists__list__body__details
+              %ul
+                %li 1000円
+                = icon('fas', 'star')
+                %li 0
+              %p (税込み)
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
+          .main__pickup-container__box__lists__list__img
+            = image_tag 'material/item3.png', height: '150px', width: '220px'
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name  生姜焼き
+            .main__pickup-container__box__lists__list__body__details
+              %ul
+                %li 30000円
+                = icon('fas', 'star')
+                %li 0
+              %p (税込み)
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
+          .main__pickup-container__box__lists__list__img
+            = image_tag 'material/item4.png', height: '150px', width: '220px'
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name クリームコロッケ
+            .main__pickup-container__box__lists__list__body__details
+              %ul
+                %li 20000円
+                = icon('fas', 'star')
+                %li 0
+              %p (税込み)
+        = link_to '#', class: "main__pickup-container__box__lists__list" do
+          .main__pickup-container__box__lists__list__img
+            = image_tag 'material/item5.png', height: '150px', width: '220px'
+          .main__pickup-container__box__lists__list__body
+            %h3.main__pickup-container__box__lists__list__body__name  ぎょうざ
+            .main__pickup-container__box__lists__list__body__details
+              %ul
+                %li 10000円
+                = icon('fas', 'star')
+                %li 1
+              %p (税込み)
+
+.app-banner
+  = render "app-banner"
+
+%footer.footer
+  = render "footer"
+
+= render "purchase_btn"

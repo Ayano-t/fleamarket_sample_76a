@@ -1,0 +1,112 @@
+%header.header
+  = render partial: 'header'
+
+- if @item.errors.any?
+  #error_explanation.alert-danger
+    %ul
+      - @item.errors.full_messages.each do |message|
+        %li
+          = message
+
+.sell-item__wrapper
+  = form_with model: @item, local: true do |f|
+    .form-container
+      .new-content#image-box
+        = f.label :name,"出品画像", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        %p.new-content-max-images 最大１０枚までアップロードできます
+        = f.fields_for :images do |image|
+          %div{data: {index: image.index}, class: 'js-file_group'}
+            = image.file_field :src, class: 'new-content-form-area-hidden js-file'
+            %br/
+            %span.js-remove 削除
+        %br/
+
+    .form-container
+      .new-content
+        = f.label :name,"商品名", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        = f.text_field :name, placeholder: "商品名を入力してください", class: "new-content-form"
+        %br/
+
+      .new-content
+        = f.label :description,"商品の説明", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        = f.text_area :description, placeholder: "(必須　1,000文字以内)（色、素材、重さ、定価、注意点など）  (例）2010年頃に１万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "new-content-form-area"
+        %br/
+
+
+    .form-container
+      %h2.form-container-title 商品の詳細
+      .new-content.category-select
+        = f.label '',"カテゴリ", class: "new-content-title" 
+        = render partial:'req' 
+        .new-content-wrapper
+          .new-content-wrapper__box
+            = f.select :category, @category_parent_array, {}, {class: 'new-content-wrapper__box--select', id: 'parent_category'}
+
+      .new-content
+        = f.label :brand,"ブランド", class: "new-content-title"
+        = render partial:'any'
+        %br/
+        = f.text_field :brand, placeholder: "ブランド", class: "new-content-form"
+        %br/
+
+      .new-content
+        = f.label :condition,"状態", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        = f.select :condition, Item.conditions.keys,{prompt: true},{ class: "new-content-form"}
+        %br/
+
+
+    .form-container
+      %h2.form-container-title 配送について
+      .new-content
+        = f.label :shipping_costs,"配送料の負担", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        = f.select :shipping_costs, Item.shipping_costs.keys,{prompt: true},{ class: "new-content-form"}
+        %br/
+
+      .new-content
+        = f.label :shipping_from,"発送元の地域", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        = f.select :shipping_from, Item.shipping_froms.keys,{},{ class: "new-content-form"}
+        %br/
+
+      .new-content
+        = f.label :shipping_date,"発送までの日数", class: "new-content-title"
+        = render partial:'req' 
+        %br/
+        = f.select :shipping_date, Item.shipping_dates.keys,{prompt: true},{ class: "new-content-form"}
+        %br/
+
+
+    .form-container
+      .new-content
+        %h2.form-container-title  価格（¥300〜9,999,999）
+        .price-box
+          .box
+            = f.label :price,"販売価格", class: "new-content-title"
+            = render partial:'req' 
+          = f.text_field :price, placeholder: "0", class: "new-content-form-price"
+      .price-box
+        %p 販売手数料（10%）
+        %p.right-content
+        
+    .form-container
+      .price-box
+        %p 販売利益
+        %p.right-content
+
+    .form-container
+      = f.submit "出品する",class: "new-submit" 
+      %p.precautions 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+
+%footer.footer
+  = render partial: 'footer'

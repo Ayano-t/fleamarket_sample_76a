@@ -1,0 +1,26 @@
+.header__inner
+  .header__inner__upper
+    %h1.header__inner__upper__left
+      = link_to root_path, class: "header__icon" do
+        = image_tag 'material/logo/logo.png', class: 'header__logo'
+    .header__inner__upper__right
+      = form_with(url: search_items_path, local: true, method: :get, class: "header__inner__upper__right__form") do |f|
+        = f.text_field :keyword, placeholder: 'キーワードから探す', class: "header__inner__upper__right__form__search-box"  
+        %button.header__inner__upper__right__form__search-btn
+          = image_submit_tag 'material/icon/icon-search 1.png', class: 'header__inner__upper__right__form__search-btn__img'
+  .header__inner__nav
+    %ul.header__inner__nav__left
+      %li.header__inner__nav__left__list
+        = link_to "カテゴリー"
+      %li.header__inner__nav__left__list
+        = link_to "ブランド"
+    - if user_signed_in?
+      %ul.header__inner__nav__right
+        %li.header__inner__nav__right__list
+          = link_to "マイページ", logout_user_path(current_user)
+    - else
+      %ul.header__inner__nav__right
+        %li.header__inner__nav__right__list
+          = link_to "ログイン", new_user_session_path
+        %li.header__inner__nav__right__list
+          = link_to "新規会員登録", new_user_registration_path

@@ -1,0 +1,106 @@
+$padding_set: 32px 16px;
+$height: 100vh;
+$margin_center: 0 auto;
+$blod_font: bold;
+$normal_font: normal;
+$border_solid: 1px solid;
+$half_width: calc(100% / 2);
+$display_flex: flex;
+$white: #F8F8F8;
+$text_align: center;
+$display_between: space-between;
+$font_14: 14px;
+.purchase_confirmation {
+  color: #333333;
+  width: 100%;
+  height: $height;
+  &__container {
+    width: $half_width;
+    height: $height;
+    margin: $margin_center;
+    background-color: $white;
+    &__inner {
+      width: $half_width;
+      height: $height;
+      margin: $margin_center;
+      font-weight: $blod_font;
+      &__logo{
+        font-size: 24px;
+        font-weight: $blod_font;
+        text-align: $text_align;
+        padding: $padding_set;
+        border-bottom: $border_solid;
+      }
+      .item_information {
+        font-size: 18px;
+        display: $display_flex;
+        justify-content: start;
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        &__image {
+          margin-right: 50px;
+        }
+        &__logo{
+          font-size: $font_14;
+          font-weight: $normal_font;
+          .price {
+            display: $display_flex;
+            justify-content: end;
+            &_tax {
+              margin-right: 10px;
+              font-size: 12px;
+            }
+            &_how_mach {
+              font-size: $font_14;
+              font-weight: $blod_font;
+            }
+          }
+        }
+      }
+      .payment_amount {
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        display: $display_flex;
+        justify-content: $display_between;
+      }
+      .how_to_pay {
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        &__type {
+          font-size: $font_14;
+          margin-top: 10px;
+          .credit_card {
+            &__number {
+              font-weight: $normal_font;
+            }
+            &__limit {
+              font-weight: $normal_font;
+            }
+          }
+        }
+      }
+      .shipping_address {
+        display: $display_flex;
+        justify-content: $display_between;
+        padding: $padding_set;
+        border-bottom: $border_solid;
+        &__detail{
+          font-size: $font_14;
+          font-weight: $normal_font;
+        }
+      }
+      .purchase_confirmation__btn {
+        padding: $padding_set;
+        text-align: $text_align;
+        &_submit {
+          padding: 5px 20px;
+          background-color: cyan;
+          color: $white;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+

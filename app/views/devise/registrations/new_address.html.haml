@@ -1,0 +1,46 @@
+.body
+  %header.header
+    = render 'items/header' 
+        
+
+
+  .address
+    %h2.address__top 個人情報入力
+    .address__form
+      = form_for(@address, url: addresses_path) do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .address__form__box
+          = f.label :postal_code, "郵便番号", class: "address__form__box__title"
+          %span.address__form__box__title__req 必須
+          %br/
+          = f.text_field :postal_code, class: "address__form__box__input", placeholder: "例）123-456" , type: "text", id: "postal-code"
+        .address__form__box
+          = f.label :prefecturs, "都道府県", class: "address__form__box__title"
+          %span.address__form__box__title__req 必須
+          %br/
+          = f.select :prefecturs, Address.prefecturs.keys, {prompt: '----'}, {class: 'address__form__box__input'}
+        .address__form__box
+          = f.label :municipalities, "市区町村", class: "address__form__box__title"
+          %span.address__form__box__title__req 必須
+          %br/
+          = f.text_field :municipalities, class: "address__form__box__input", placeholder: "例）渋谷区" , type: "text", id: "municipalities"
+        .address__form__box
+          = f.label :block_number, "番地", class: "address__form__box__title"
+          %span.address__form__box__title__req 必須
+          %br/
+          = f.text_field :block_number, class: "address__form__box__input", placeholder: "例）xxx-ooo" , type: "text", id: "block_number"
+        .address__form__box
+          = f.label :building_number, "建物名", class: "address__form__box__title"
+          %br/
+          = f.text_field :building_name,  class: "address__form__box__input", type: "text", id: "building_name"
+        .address__form__box
+          = f.label :phone_number, "電話番号", class: "address__form__box__title"
+          %span.address__form__box__title__req 必須
+          %br/
+          = f.text_field :phone_number, class: "address__form__box__input", placeholder: "例）012-345-6789" , type: "text", id: "phone_number"
+        .address__form__submit
+          = f.submit "登録する", class: "address__form__submit__btn", id: "token_submit"
+      = render "devise/shared/links" 
+
+  %footer.footer
+    = render 'items/footer'

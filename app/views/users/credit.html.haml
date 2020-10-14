@@ -1,0 +1,73 @@
+%header.header
+  = render 'items/header'
+.mypage.clearfix
+  = render partial: 'user-side'
+  .credit
+    .credit__top
+      クレジットカード入力画面
+    .credit__form
+      = form_tag do
+        .credit__form__box
+          %label.credit__form__box__title
+            カード番号
+            %span.credit__form__box__title__req
+              必須
+          %br/
+          = text_field_tag "number", "", class: "credit__form__box__input", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+          %br
+          %ul.credit__form__box__brand-lists
+            %li.credit__form__box__brand-lists__list
+              = image_tag 'credit icon/iconfinder_visa-curved_38610.png', alt: 'visa', height: '30', width: '40', class: 'visa'
+            %li.credit__form__box__brand-lists__list
+              = image_tag 'credit icon/iconfinder_mastercard-curved_38602.png', alt: 'mastercard', height: '30', width: '40', class: 'mastercard'
+            %li.credit__form__box__brand-lists__list
+              = image_tag 'credit icon/iconfinder_jcb_card_payment_358102.png', alt: 'jcb', height: '30', width: '40', class: 'jcb'
+            %li.credit__form__box__brand-lists__list
+              = image_tag 'credit icon/iconfinder_american-express-curved_38590.png', alt: 'american-express', height: '30', width: '40', class: 'american-express'
+            %li.credit__form__box__brand-lists__list
+              = image_tag 'credit icon/iconfinder_paypal-curved_38604.png', alt: 'paypal', height: '30', width: '40', class: 'paypal'
+          %label.credit__form__box__title
+            有効期限
+            %span.credit__form__box__title__req
+              必須
+          %br/
+          %select.credit__form__box__select{name: "exp_month", type: "text"}
+            %option{value: ""} --
+            %option{value: "1"}01
+            %option{value: "2"}02
+            %option{value: "3"}03
+            %option{value: "4"}04
+            %option{value: "5"}05
+            %option{value: "6"}06
+            %option{value: "7"}07
+            %option{value: "8"}08
+            %option{value: "9"}09
+            %option{value: "10"}10
+            %option{value: "11"}11
+            %option{value: "12"}12
+          %span 月/
+          %select.credit__form__box__select{name: "exp_year", type: "text"}
+            %option{value: ""} --
+            %option{value: "2020"}20
+            %option{value: "2021"}21
+            %option{value: "2022"}22
+            %option{value: "2023"}23
+            %option{value: "2024"}24
+            %option{value: "2025"}25
+            %option{value: "2026"}26
+            %option{value: "2027"}27
+            %option{value: "2028"}28
+            %option{value: "2029"}29
+            %option{value: "2030"}30
+          %span 年
+          %br
+          %label.credit__form__box__title
+            セキュリティコード
+            %span.credit__form__box__title__req
+              必須
+            %br/
+          = text_field_tag "cvc", "", class: "credit__form__box__input", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+        .card_token
+          = submit_tag "追加する", id: "token_submit", class: "credit__form__submit-btn"
+%footer.footer
+  = render 'items/footer'

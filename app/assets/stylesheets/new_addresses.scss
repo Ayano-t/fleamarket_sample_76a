@@ -1,0 +1,44 @@
+.address {
+  @include container;
+  &__top {
+    height: 100px;
+    font-size: 22px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  &__form {
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 40px;
+    &__box {
+      width: 350px;
+      margin: 30px auto 0;
+      &__title {
+        @include font-title;
+        &__req {
+          @include font-require;
+        }
+        &__input {
+          @include input-text_field;
+        }
+      }
+    }
+    &__submit {
+      width: 350px;
+      margin: 30px auto 0;
+      &__btn {
+        @include submit-btn;
+      }
+    }
+  }
+}
+
+.address__form__box__input {
+  @include input-text_field;
+}
+
+.address__form__box__submit {
+  @include submit-btn;
+}

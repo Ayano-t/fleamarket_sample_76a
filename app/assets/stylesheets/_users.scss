@@ -1,0 +1,120 @@
+// マイページ
+
+@mixin side-nav-box {
+  width: 280px;
+  margin-bottom: 40px;
+  &__title {
+    height: 40px;
+    text-align: center;
+    size: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  &__lists {
+    list-style: none;
+    &__list {
+      position: relative;
+      height: 50px;
+      width: 270px;
+      border-bottom: 1px solid;
+      line-height: 50px;
+      padding: 0 10px;
+      font-weight: bold;
+      a {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: #4e5863;
+        .fas {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@mixin main-content-box {
+  height: 400px;
+  width: 800px;
+  &__title {
+    height: 70px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 70px;
+    background-color: #3ccace;
+    color: #4e5863;
+  }
+  &__lists {
+    &__list {
+      height: 70px;
+      width: 800px;
+      border-bottom: 1px solid;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      box-sizing: border-box;
+      color: #4e5863;
+    }
+  }
+}
+
+html {
+  background-color: whitesmoke;
+}
+
+.mypage {
+  width: 1200px;
+  padding-top: 30px;
+  margin: 0 auto;
+  .left-contents {
+    float: left;
+    width: 300px;
+    margin-right: 50px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    .page-nav {
+      @include side-nav-box();
+    }
+    .setting {
+      @include side-nav-box();
+    }
+  }
+  .right-contents {
+    float: right;
+    width: 800px;
+    margin: 0 auto;
+    .user {
+      height: 300px;
+      width: 100%;
+      text-align: center;
+      &__icon {
+        height: 200px;
+        width: 100%;
+        line-height: 350px;
+      }
+      &__info {
+        display: flex;
+        justify-content: center;
+        &__items {
+          padding-left: 20px;
+        }
+      }
+    }
+    .todo {
+      @include main-content-box();
+    }
+    .transactions{
+      @include main-content-box();
+    }
+    .purchased {
+      @include main-content-box();
+    }
+  }
+}
+

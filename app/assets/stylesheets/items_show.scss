@@ -1,0 +1,99 @@
+$width_harf: calc(100% / 2);
+$thema_color: cyan;
+$categorie_color: #00bfff;
+$border: 1px solid #888; 
+$container_center: 0 auto;
+$bold_font: bold;
+$normal_font: normal;
+$text-decoration: none;
+$item_center: center; 
+$top_maragin: 50px;
+$color_white: #F8F8F8;
+.items__show__main {
+  width: 100%;
+    &__container__top {
+      width: $width_harf;
+      margin: $container_center;
+      padding: 40px 24px;
+      font-weight: $bold_font;
+      background-color: $color_white;
+      &__itemBox {
+        &__name {
+          text-align: $item_center;
+          margin: $container_center;
+          width: $width_harf;
+          font-size: 24px;
+          font-weight: $bold_font;
+        }
+        &__body {
+          margin-top: $top_maragin; 
+          ul {
+            display: flex;
+            justify-content: center;
+            li {
+              margin-right: 10px;
+            }
+          }
+        }
+        &__price {
+          text-align: $item_center;
+          font-size: 27px;
+          padding: 10px;
+          font-weight: $bold_font;
+        }
+        &__description {
+          width: 100%;
+          margin-top: $top_maragin;
+          .text {
+            font-weight: $normal_font;
+            border: $border;
+            margin-top: 10px;
+            padding: 10px;
+          }
+        }
+        &__table {
+          margin-top: $top_maragin;
+          table {
+            width: 70%;
+            margin: $container_center;
+            th {
+              background-color: $thema_color;
+              text-align: $item_center;
+              border: $border;
+            }
+            td {
+              background-color: #f5f5f5; 
+              font-weight: $normal_font;
+              padding: 10px;
+              border: $border;
+              span {
+                color: $categorie_color;
+              }
+              a {
+                text-decoration: $text-decoration;
+                color: $categorie_color;
+              }
+              & :hover {
+                color: darkblue;
+              }
+            }
+          }
+        }
+        &__btn {
+          margin-top: $top_maragin;
+          margin-bottom: 50px;
+          &__container {
+            width: $width_harf;
+            margin: $container_center;
+            &__buy, &__edit, &__delete, a {
+              text-align: $item_center;
+              background-color: $thema_color;
+              padding: 10px;
+              text-decoration: $text-decoration;
+              color: $color_white;
+            }
+          }
+        }
+      }
+    }
+  }

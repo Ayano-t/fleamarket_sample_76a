@@ -1,0 +1,10 @@
+%header.header
+  = render 'items/header'
+.mypage.clearfix
+  = render partial: 'user-side'
+  .logout-content
+    .logout-content__inner
+      .logout-content__inner__btn
+        = link_to('ログアウト', destroy_user_session_path, method: :delete, class: 'logout-btn')
+%footer.footer
+  = render 'items/footer'
